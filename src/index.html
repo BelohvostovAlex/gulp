@@ -1,85 +1,12 @@
 @@include('parts/header.html')
 
-<header class="header">
-    <div class="container">
-        <div class="header__inner">
-            <div class="header__logo">
-                <img src="./images/logo.png" alt="logo">
-            </div>
-            <nav class="header__navbar">
-                <ul class="navmenu">
-                    <li class="navlink"><a href="#">main</a></li>
-                    <li class="navlink"><a href="#">about</a></li>
-                    <li class="navlink"><a href="#">game features</a></li>
-                    <li class="navlink"><a href="#">system requirements</a></li>
-                    <li class="navlink"><a href="#">quotes</a></li>
-                </ul>
-            </nav>
-            <div class="header__lang">
-                <div class="header__lang__block">
-                    <div class="header__lang--title">eng</div>
-                    <div class="header__lang--icon">
-                        <img src="./images/Vector 2.png" alt="scrolldown">
-                    </div>
-                    <ul class="header__lang__list">
-                        <li class="header__lang__list__item">
-                            rus
-                        </li>
-                        <li class="header__lang__list__item">
-                            fra
-                        </li>
-                        <li class="header__lang__list__item">
-                            deu
-                        </li>
-                    </ul>
-                </div>
-                <div class="header__gameLogos">
-                    <div class="header__gameLogos--xbox">
-                        <img src="./images/xbox.png" alt="xbox">
-                    </div>
-                    <div class="header__gameLogos--steam">
-                        <img src="./images/steam.png" alt="steam">
-                    </div>
-                </div>
-                <div class="header__burger">
-                    <div class="header__burger__wrapper">
-                        <img src="./images/menu icon.png" alt="menu">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+
+
 <main>
-    <section class="intro">
-        <div class="intro__gradient">
-            <article class="intro__title__block">
-                <h1 class="intro__title">survive at all costs</h1>
-                <h3 class="intro__subtitle">experience new social battle royale game</h3>
-                <button class="intro__btn">
-                    <span class="intro__btn-text">buy now on Steam</span>
-                    <span class="intro__btn-price">$14.99</span>
-                </button>
-            </article>
-            <div class="intro__footer__block">
-                <div class="intro__footer__block__scroll">
-                    <h4 class="intro__footer__title">the story</h4>
-                    <a href="#">
-                        <img src="./images/scroll down.png" alt="scrolldown">
-                    </a>
-                </div>
-                <div class="intro__footer__block__next">
-                        <div class="intro__footer__block__next__wrapper">
-                            <div class="intro__footer__block__next--round"></div>
-                            <div class="intro__footer__block__next--round"></div>
-                            <div class="intro__footer__block__next--round"></div>
-                            <div class="intro__footer__block__next--round"></div>
-                            <img src="./images/arrow.png" alt="arrow">
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    </main>
+  @@include('parts/intro.html')
+  @@include('parts/about.html')
+  @@include('parts/sletter.html')
+</main>
+
 
 @@include('parts/footer.html')
