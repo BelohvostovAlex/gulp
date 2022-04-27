@@ -3,14 +3,15 @@ const sass = require("gulp-sass")(require("sass"));
 const csso = require("gulp-csso");
 const include = require("gulp-file-include");
 const htmlmin = require("gulp-htmlmin");
+const webpCss = require('gulp-webp-css');
 const del = require("del");
 const concat = require("gulp-concat");
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
-const webp = require("gulp-webp")
-const changed = require("gulp-changed")
-const plumber = require("gulp-plumber")
-const multiDest = require("gulp-multi-dest")
+const webp = require("gulp-webp");
+const changed = require("gulp-changed");
+const plumber = require("gulp-plumber");
+const multiDest = require("gulp-multi-dest");
 const sync = require("browser-sync").create();
 
 const html = () => {
@@ -31,6 +32,7 @@ const html = () => {
 const scss = () => {
   return src("src/scss/**.scss")
     .pipe(sass())
+    .pipe(webpCss())
     .pipe(
       autoprefixer({
         cascade: false,
@@ -62,11 +64,11 @@ const imgmin = () => {
         imagemin.optipng({ optimizationLevel: 5 }),
       ])
     )
-    .pipe(dest("src/images"));
+    .pipe(dest("dist/images"));
 };
 
 const webpConv = () => {
-  return src('src/images/**/*.+(png|jpg|jpeg)')
+  return src('dist/images/**/*.+(png|jpg|jpeg)')
     .pipe(plumber())
     .pipe(changed('dist/images', {
       extension: '.webp'

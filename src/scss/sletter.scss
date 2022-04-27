@@ -3,7 +3,7 @@
 .sletter {
   width: 100%;
   height: 100vh;
-  background-image: url("./images/sletterBG.webp");
+  background-image: url("./images/sletterBG.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -141,4 +141,91 @@
   border-radius: 4px;
   color: black;
   cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .sletter {
+    height: auto;
+    background-image: url("./images/sletterMobile.png");
+    background-position: 0% 30%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: relative;
+    background-color: #0e0e0e;
+
+    &__gradient1 {
+      background: radial-gradient(
+        81.83% 50.42% at 48.17% 30%,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0) 77.58%,
+        #0e0e0e 99.74%
+      );
+    }
+
+    &__gradient2 {
+      background: radial-gradient(
+        25% 63.19% at 10% 50%,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0) 46.15%,
+        #0e0e0e 99.74%
+      );
+    }
+  }
+
+  .sletter__inner {
+    display: block;
+
+    &__left {
+      display: none;
+    }
+    &__right {
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  .sletter__inner__right__title {
+    margin-bottom: 30px;
+    padding-left: 90px;
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 33px;
+      line-height: 33px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  .sletter__inner__right__form {
+    display: block;
+  }
+
+  .sletter__inner__right__buttons__input {
+    width: 100%;
+    margin-bottom: 20px;
+
+    label {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    input {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+  .sletter__inner__right__buttons__sub {
+    width: 100%;
+    font-size: 12px;
+    padding: 12px;
+  }
 }

@@ -58,9 +58,21 @@
 .footer__inner__menu__soc li {
   margin-right: 40px;
 
-  :last-child {
-    margin-right: 0px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.footer__inner__menu__soc li:last-child {
+  margin-right: 0;
+}
+
+.footer__inner__menu__soc svg path {
+  transition: 0.2s linear all;
+}
+
+.footer__inner__menu__soc li:hover path {
+  fill: #e93830;
 }
 
 .footer__inner__logo {
@@ -129,4 +141,106 @@
 
 .footer__bottom__info ul li a {
   color: $main-color;
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    position: static;
+    display: block;
+    background: #0e0e0e;
+
+    hr {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__logo {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    &__menu__soc {
+      padding: 0px 10px;
+      justify-content: space-between;
+    }
+
+    &__menu__items {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  .footer__inner__logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer__inner__menu__items li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    &:nth-child(1) {
+      position: relative;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 4px;
+        height: 4px;
+        background-color: #e93830;
+        border-radius: 1px;
+        position: absolute;
+        top: -20%;
+        left: 50%;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-right: 0px;
+    }
+    &:nth-child(4) {
+      margin-bottom: 50px;
+    }
+    &:nth-child(5) {
+      margin-right: 0px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .footer__bottom {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .footer__bottom__info > ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      margin-bottom: 15px;
+      margin-right: 0px;
+    }
+  }
+
+  .footer__bottom__info ul li:last-child {
+    margin-bottom: 0px;
+  }
 }
