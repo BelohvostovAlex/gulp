@@ -2,7 +2,9 @@
 
 .about {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 110vh; //высота как на макете + убрали риски не влезть
+  max-height: 115vh;
   background-image: url("./images/about.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -10,7 +12,7 @@
 
   &__gradient {
     width: 100%;
-    height: 100%;
+    height: 101%;
     background: radial-gradient(
       136.03% 54.57% at 50% 48.04%,
       rgba(255, 255, 255, 0) 0%,
@@ -29,10 +31,11 @@
   &__inner {
     display: flex;
     width: 100%;
-    height: 100%;
-    justify-content: space-between;
+    height: 100%; //высота также нужна
     align-items: center;
-    transform: translateY(-50px);
+    transform: translateY(
+      -50px
+    ); //если убрать это + webkit translateY блок сдвинется, с ним смотрится более четко
   }
 }
 
@@ -67,7 +70,7 @@
     font-size: 18px;
     margin-right: 20px;
     align-self: flex-end;
-    line-height: 22px;
+    line-height: 1.2;
     margin-top: 60px;
     position: relative;
     text-align: justify;
@@ -104,7 +107,7 @@
     font-family: $secondary-font-family;
     font-size: 80px;
     color: $main-color;
-    line-height: 80px;
+    line-height: 1;
     letter-spacing: 3px;
   }
 }
@@ -137,8 +140,6 @@
     position: absolute;
     top: 20px;
     left: 80px;
-    width: 440px;
-    height: 565px;
     opacity: 0.9;
     z-index: 4;
   }
@@ -148,8 +149,6 @@
     top: 40px;
     left: 100px;
     z-index: 3;
-    width: 438px;
-    height: 512px;
     opacity: 0.8;
   }
 
@@ -207,6 +206,9 @@
 }
 
 @media screen and (max-width: 320px) {
+  .about {
+    height: 115vh; //высота как на макете + убрали риски не влезть
+  }
   .about__inner {
     flex-direction: column;
     align-items: flex-start;
@@ -224,7 +226,6 @@
     h2 {
       width: 271px;
       font-size: 33px;
-      line-height: 33px;
     }
     h3 {
       font-size: 18px;
@@ -232,7 +233,7 @@
     }
 
     &::after {
-      bottom: -15px;
+      bottom: -25px;
       height: 2px;
       width: 299px;
     }
@@ -242,7 +243,7 @@
 
   .about__slider {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
     height: 300px;
     margin-left: 20px;
   }
@@ -253,15 +254,11 @@
   }
 
   .about__slider__item:nth-child(2) {
-    width: 196px;
-    height: 252px;
     top: 10px;
     left: 40px;
   }
 
   .about__slider__item:nth-child(3) {
-    width: 196px;
-    height: auto;
     top: 20px;
     left: 50px;
   }
@@ -284,8 +281,8 @@
   .about__inner__text__descr {
     width: 100%;
     font-size: 14px;
-    line-height: 16px;
-    margin-top: 30px;
+    line-height: 1.15;
+    margin-top: 50px;
     padding-left: 20px;
 
     &::after {
@@ -298,8 +295,8 @@
 
   .about__slider__switch {
     right: 20px;
-    & a svg {
-      height: 16px;
+    & a img {
+      height: 18px;
       width: 8px;
     }
   }

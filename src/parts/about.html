@@ -23,7 +23,11 @@
           </div>
           <div class="about__slider">
             <div class="about__slider__item">
-              <img src="./images/aboutImg1.jpg" alt="imageofbeach" />
+              <picture>
+                <source srcset="./images/aboutImg1mobile.webp" media="(max-width: 320px)">
+                <source srcset="./images/aboutImg1.webp">
+                <img src="./images/aboutImg1.webp" alt="beach">
+              </picture>
               <div class="about__slider__item__rounds">
                 <div
                   class="about__slider__item__rounds__item about__slider__item__rounds__item_active"
@@ -35,28 +39,22 @@
               </div>
             </div>
             <div class="about__slider__item">
-              <img src="./images/aboutImg3.jpg" alt="imageofforest" />
+              <picture>
+                <source srcset="./images/aboutImg3mobile.webp" media="(max-width: 320px)">
+                <source srcset="./images/aboutImg3.webp">
+                <img src="./images/aboutImg3.webp" alt="imageofforest">
+              </picture>
             </div>
             <div class="about__slider__item">
-              <img src="./images/aboutImg2.webp" alt="imageofnature" />
+              <picture>
+                <source srcset="./images/aboutImg2mobile.webp" media="(max-width: 320px)">
+                <source srcset="./images/aboutImg2.webp">
+                <img src="./images/aboutImg2.webp" alt="lake">
+              </picture>
             </div>
             <div class="about__slider__switch">
               <a href="#">
-                <svg
-                  width="18"
-                  height="38"
-                  viewBox="0 0 18 38"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.82153 1.95628L1.82153 36.0297L15.5642 19.1837L1.82153 1.95628Z"
-                    stroke="white"
-                    stroke-width="3.36454"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <img src="./images/switch.svg" alt="switch">
               </a>
             </div>
           </div>
