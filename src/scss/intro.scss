@@ -4,11 +4,7 @@
 .intro {
   width: 100%;
   height: 100vh;
-  //здесь оставил 100vh, кажется стартовая должна красиво смотреться и полностью вмещаться в 100vh девайса (iphone 5) или десктопа
   background-image: url("./images/Group\ 1.jpg");
-  // background-image: -webkit-image-set(
-  //   url("./images/Group\ 1.webp") type('image/webp') 2x,
-  //   url("./images/Group\ 1.jpg") 2x);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -73,7 +69,7 @@
   }
 }
 
-.intro__footer__top > a > img {
+.intro__scroll {
   width: 25px;
   height: 12px;
   animation: movingscroll 2s linear infinite;
@@ -158,7 +154,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 568px) {
   .intro {
     background-image: url("./images/introMobile.jpg");
 
@@ -201,5 +197,15 @@
 
   .intro__footer__bottom {
     display: block;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .intro {
+    background-image: url("./images/Group\ 1.jpg");
+  }
+
+  .intro__footer {
+    bottom: 10px;
   }
 }

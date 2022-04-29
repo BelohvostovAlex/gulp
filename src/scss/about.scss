@@ -3,8 +3,8 @@
 .about {
   width: 100%;
   min-height: 100vh;
-  height: 110vh; //высота как на макете + убрали риски не влезть
-  max-height: 115vh;
+  height: 1050px;
+  max-height: 1100px;
   background-image: url("./images/about.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -29,24 +29,37 @@
   }
 
   &__inner {
+    height: 100%;
     display: flex;
-    width: 100%;
-    height: 100%; //высота также нужна
-    align-items: center;
-    transform: translateY(
-      -50px
-    ); //если убрать это + webkit translateY блок сдвинется, с ним смотрится более четко
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
-.about__inner__text {
+//swiper
+.swiper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 800px;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.slide-text {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
+  width: 45%;
 
-  &__title {
+  &__block {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -55,7 +68,7 @@
     &::after {
       display: block;
       content: "";
-      width: 712px;
+      width: 642px;
       height: 3px;
       position: absolute;
       bottom: -10px;
@@ -93,7 +106,16 @@
   }
 }
 
-.about__inner__text__title {
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: $main-color;
+}
+
+.swiper-pagination span {
+  background-color: $main-color;
+}
+
+.slide-text__block {
   h3 {
     font-family: $secondary-font-family;
     font-size: 24px;
@@ -112,8 +134,22 @@
   }
 }
 
-//slider
-.about__slider {
+.swiper-slide:nth-child(3) {
+  .slide-text__descr::after {
+    left: 0px;
+    right: 0px;
+    width: 159px;
+  }
+}
+
+.swiper-slide:nth-child(4) {
+  .slide-text__descr::after {
+    right: 132px;
+    width: 172px;
+  }
+}
+
+.slide-pic {
   width: 50%;
   height: 631px;
   padding: 10px;
@@ -122,7 +158,7 @@
   display: flex;
 }
 
-.about__slider__item {
+.slide-pic__item {
   &:nth-child(1) {
     position: absolute;
     top: 0;
@@ -132,6 +168,8 @@
     height: 610px;
 
     img {
+      width: 100%;
+      height: 100%;
       position: relative;
     }
   }
@@ -140,8 +178,14 @@
     position: absolute;
     top: 20px;
     left: 80px;
+    width: 440px;
+    height: 565px;
     opacity: 0.9;
     z-index: 4;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &:nth-child(3) {
@@ -150,79 +194,47 @@
     left: 100px;
     z-index: 3;
     opacity: 0.8;
+    width: 440px;
+    height: 512px;
   }
 
   img {
     display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     border-radius: 7px;
   }
 }
 
-.about__slider__item__rounds {
-  position: absolute;
-  bottom: 5%;
-  left: 0%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0px 110px;
-
-  &__item {
-    width: 14px;
-    height: 14px;
-    border: 1px solid $main-color;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-}
-
-.about__slider__item__rounds__item:nth-child(1) {
-  position: relative;
-
-  &::after {
-    display: block;
-    content: "";
-    height: 2px;
-    width: 30px;
-    background-color: $main-color;
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%);
-  }
-}
-
-.about__slider__item__rounds__item_active {
-  background-color: $main-color;
-}
-
-.about__slider__switch {
-  position: absolute;
-  right: 0px;
-  top: 50%;
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 568px) {
   .about {
-    height: 115vh; //высота как на макете + убрали риски не влезть
+    height: 650px;
+    max-height: 700px;
   }
-  .about__inner {
+
+  .swiper {
+    width: 300px;
+    height: 650px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 18px;
+  }
+
+  .swiper-slide {
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 5px;
+    padding: 0px;
     justify-content: center;
-    transform: translateY(0px);
-
-    &__text {
-      display: block;
-      width: 100%;
-    }
   }
 
-  .about__inner__text__title {
+  .slide-text {
+    display: block;
+    width: 100%;
+  }
+
+  .slide-text__block {
     h2 {
       width: 271px;
       font-size: 33px;
@@ -239,47 +251,41 @@
     }
   }
 
-  //slider
-
-  .about__slider {
+  .slide-pic {
     width: 100%;
+    margin-top: 10px;
+  }
+
+  .slide-pic__item {
     margin-top: 40px;
-    height: 300px;
+    height: 275px;
+    width: 225px;
+    border-radius: 3px;
     margin-left: 20px;
   }
 
-  .about__slider__item:nth-child(1) {
+  .slide-pic__item:nth-child(1) {
     width: 225px;
-    height: auto;
+    height: 275px;
   }
 
-  .about__slider__item:nth-child(2) {
+  .slide-pic__item:nth-child(2) {
+    width: 196px;
+    height: 252px;
     top: 10px;
     left: 40px;
   }
 
-  .about__slider__item:nth-child(3) {
+  .slide-pic__item:nth-child(3) {
     top: 20px;
     left: 50px;
+    width: 196px;
+    height: 230px;
   }
 
-  .about__slider__item__rounds {
-    bottom: 3%;
-    padding: 0px 50px;
-  }
-
-  .about__slider__item__rounds__item {
-    width: 10px;
-    height: 10px;
-
-    &:nth-child(1)::after {
-      height: 1px;
-      width: 15px;
-    }
-  }
-
-  .about__inner__text__descr {
+  .slide-text__descr {
     width: 100%;
+    max-width: 280px;
     font-size: 14px;
     line-height: 1.15;
     margin-top: 50px;
@@ -293,11 +299,90 @@
     }
   }
 
-  .about__slider__switch {
-    right: 20px;
-    & a img {
-      height: 18px;
-      width: 8px;
+  .swiper-slide:nth-child(3) {
+    .slide-text__descr::after {
+      left: 79px;
+      width: 123px;
     }
+  }
+
+  .swiper-slide:nth-child(4) {
+    .slide-text__descr::after {
+      right: 36px;
+      width: 135px;
+    }
+  }
+
+  .swiper-slide:nth-child(4) {
+    .slide-pic {
+      margin-top: 25px;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -7px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 73%;
+  }
+}
+
+@media screen and (max-height: 320px) {
+  .swiper {
+    width: 528px;
+    height: 640px;
+  }
+
+  .swiper-slide {
+    align-items: center;
+  }
+
+  .slide-text__block {
+    h2 {
+      width: 520px;
+    }
+
+    &::after {
+      width: 528px;
+    }
+  }
+
+  .slide-pic {
+    width: 55%;
+    height: 330px;
+    margin: 0 auto;
+  }
+
+  .slide-text__descr {
+    max-width: 528px;
+
+    &::after {
+      right: 26px;
+    }
+  }
+
+  .swiper-slide:nth-child(3) {
+    .slide-text__descr::after {
+      left: 20px;
+      width: 45px;
+    }
+  }
+
+  .swiper-slide:nth-child(4) {
+    .slide-text__descr::after {
+      right: 164px;
+      width: 135px;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -7px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 65%;
   }
 }
