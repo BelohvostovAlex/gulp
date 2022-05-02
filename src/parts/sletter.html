@@ -3,33 +3,44 @@
     <div class="sletter__gradient2">
       <div class="container">
         <div class="sletter__inner">
-          <div class="sletter__inner__left">
-            <div class="sletter__inner__left__grad">
-              <img src="./images/sletter.webp" alt="sletter" />
+          <div class="sletter-left">
+            <div class="sletter-left__grad">
+              <img
+                class="sletter-left__img"
+                src="./images/sletter.webp"
+                alt="sletter"
+              />
             </div>
           </div>
-          <div class="sletter__inner__right">
-            <article class="sletter__inner__right__title">
-              <h3>want to stay in touch?</h3>
-              <h2>newsletter subscribe</h2>
-              <p>
+          <div class="sletter-right">
+            <article class="section-name section-name__sletter">
+              <h2 class="section-name__subtitle sletter-name__subtitle">
+                want to stay in touch?
+              </h2>
+              <h3 class="section-name__title sletter-name__title">
+                newsletter subscribe
+              </h3>
+              <p class="section-name__descr">
                 In order to start receiving our news, all you have to do is
                 enter your email address. Everything else will be taken care of
                 by us. We will send you emails containing information about
                 game. We don't spam.
               </p>
             </article>
-            <form action="" class="sletter__inner__right__form">
-              <div class="sletter__inner__right__buttons__input">
-                <label for="sletter__email">Your email address</label>
+            <form action="" class="sletter-form">
+              <div class="sletter-form__buttons">
+                <label class="sletter-form__label" for="sletter__email"
+                  >Your email address</label
+                >
                 <input
                   id="sletter__email"
+                  class="sletter-form__input"
                   type="email"
                   placeholder="aliciliniavopir@gmail.com"
                 />
               </div>
               <input
-                class="sletter__inner__right__buttons__sub"
+                class="button button__sletter"
                 value="Subscribe now"
                 type="submit"
               />

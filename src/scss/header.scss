@@ -14,31 +14,31 @@
     justify-content: space-between;
     align-items: center;
   }
-
-  &__logo {
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
-  }
-
-  &__lang {
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-
-  &__burger {
-    display: none;
-  }
 }
 
-.header__logo > img {
+.nav-submenu {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.logo__img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.header__lang__block {
+.lang-block {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,12 +47,12 @@
   margin-right: 40px;
   cursor: pointer;
 
-  &:hover .header__lang__list {
+  &:hover .lang-list {
     opacity: 1;
     transform: translateY(0px);
   }
 
-  &:hover .header__lang__block__icon img {
+  &:hover .lang-block__img {
     transform: rotate(180deg);
   }
 
@@ -72,13 +72,13 @@
   }
 }
 
-.header__lang__block__icon > img {
+.lang-block__img {
   display: block;
   width: 10px;
   height: 6px;
 }
 
-.header__game-logos {
+.game-logos {
   display: flex;
   align-items: center;
   position: relative;
@@ -96,23 +96,23 @@
   }
 }
 
-.header__game-logos__xbox,
-.header__game-logos__steam {
+.game-logos__xbox,
+.game-logos__steam {
   width: 30px;
   height: 30px;
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
 }
 
-.header__game-logos__xbox {
+.game-logos__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.game-logos__xbox {
   margin-right: 17px;
 }
 
-.header__lang__list {
+.lang-list {
   position: absolute;
   top: 35px;
   left: 0px;
@@ -141,60 +141,61 @@
       color: #ffb548;
     }
 
-    &_active {
+    &--active {
       color: $secondary-color;
     }
   }
 }
 
 //navigation
-.header__navbar {
+.nav-menu {
   display: flex;
   justify-content: space-between;
 }
 
-.header__navbar__navlink {
+.nav-item {
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
   line-height: 1.3;
   margin: 0px 10px;
   padding: 5px 10px;
+}
 
-  a {
-    color: $main-color;
-    font-family: $main-font-family;
-    transition: color 0.2s linear;
-    letter-spacing: 0.1em;
+.nav-link {
+  color: $main-color;
+  font-family: $main-font-family;
+  transition: color 0.2s linear;
+  letter-spacing: 0.1em;
 
-    &:hover {
-      color: black;
-    }
+  &:hover {
+    color: black;
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 568px) {
   .header {
     padding: 10px 0px;
-
-    &__logo {
-      width: 33px;
-      height: 33px;
-    }
-
-    nav {
-      display: none;
-    }
-
-    &__game-logos {
-      display: none;
-    }
-    &__lang__block {
-      margin-right: 30px;
-    }
   }
 
-  .header__burger {
+  .game-logos {
+    display: none;
+  }
+
+  .lang-block {
+    margin-right: 30px;
+  }
+
+  .logo {
+    width: 33px;
+    height: 33px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .burger-menu {
     display: block;
     cursor: pointer;
     padding: 5px 0px;
@@ -215,12 +216,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
 
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
+    &__img {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   }
 }
