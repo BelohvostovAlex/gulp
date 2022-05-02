@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,45 +21,52 @@
     <header class="header">
       <div class="container">
         <div class="header__inner">
-          <div class="header__logo">
-            <img src="./images/logo.webp" alt="logo" />
+          <div class="logo">
+            <img class="logo__img" src="./images/logo.webp" alt="logo" />
           </div>
-          <nav>
-            <ul class="header__navbar">
-              <li class="header__navbar__navlink"><a href="#">main</a></li>
-              <li class="header__navbar__navlink"><a href="#">about</a></li>
-              <li class="header__navbar__navlink"><a href="#">game features</a></li>
-              <li class="header__navbar__navlink"><a href="#">system requirements</a></li>
-              <li class="header__navbar__navlink"><a href="#">quotes</a></li>
+          <nav class="navbar">
+            <ul class="nav-menu">
+              <li class="nav-item"><a class="nav-link" href="#">main</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">about</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">game features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">system requirements</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">quotes</a></li>
             </ul>
           </nav>
-          <div class="header__lang">
-            <div class="header__lang__block">
-              <div class="header__lang__block__title">eng</div>
-              <div class="header__lang__block__icon">
-                <img src="./images/Vector 2.webp" alt="scrolldown" />
+          <div class="nav-submenu">
+            <div class="lang-block">
+              <div class="lang-block__title">eng</div>
+              <div class="lang-block__icon">
+                <img class="lang-block__img" src="./images/dropdown.svg" alt="dropdown">
               </div>
-              <ul class="header__lang__list">
-                <li class="header__lang__list__item">rus</li>
-                <li class="header__lang__list__item header__lang__list__item_active">fra</li>
-                <li class="header__lang__list__item">deu</li>
+              <ul class="lang-list">
+                <li class="lang-list__item">rus</li>
+                <li
+                  class="lang-list__item lang-list__item--active"
+                >
+                  fra
+                </li>
+                <li class="lang-list__item">deu</li>
               </ul>
             </div>
-            <div class="header__game-logos">
-              <div class="header__game-logos__xbox">
-                <img src="./images/xbox.webp" alt="xbox" />
-              </div>
-              <div class="header__game-logos__steam">
-                <img src="./images/steam.webp" alt="steam" />
-              </div>
-            </div>
-            <div class="header__burger">
-              <div class="header__burger__wrapper">
-                <img src="./images/menu icon.webp" alt="menu" />
+            <ul class="game-logos">
+              <li class="game-logos__xbox">
+                <img class="game-logos__img" src="./images/xbox.svg" alt="xbox" />
+              </li>
+              <li class="game-logos__steam">
+                <img class="game-logos__img" src="./images/steam.svg" alt="steam" />
+              </li>
+            </ul>
+            <div class="burger-menu">
+              <div class="burger-menu__wrapper">
+                <img class="burger-menu__img" src="./images/menu icon.svg" alt="menu">
               </div>
             </div>
           </div>
         </div>
       </div>
     </header>
-

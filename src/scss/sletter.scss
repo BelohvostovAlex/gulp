@@ -1,9 +1,8 @@
 @import "./variables.scss";
 
 .sletter {
-  width: 100%;
   height: 100vh;
-  background-image: url("./images/sletterBG.webp");
+  background-image: url("./images/sletterBG.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,24 +23,31 @@
     height: 100%;
     background: #0e0e0e;
   }
-}
 
-.sletter__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 50px;
-
-  &__left {
-    width: 35%;
-  }
-
-  &__right {
-    width: 55%;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
   }
 }
 
-.sletter__inner__left__grad {
+.sletter-left {
+  width: 35%;
+
+  &__img {
+    display: block;
+    width: 90%;
+    height: auto;
+    opacity: 0.9;
+  }
+}
+
+.sletter-right {
+  width: 55%;
+}
+
+.sletter-left__grad {
   width: 100%;
   height: 100%;
   background: radial-gradient(
@@ -52,93 +58,150 @@
   );
   display: flex;
   justify-content: flex-end;
-
-  img {
-    display: block;
-    width: 90%;
-    height: auto;
-    opacity: 0.9;
-  }
 }
 
-.sletter__inner__right__title {
+.section-name__sletter {
   margin-bottom: 60px;
-
-  h2 {
-    width: 100%;
-    font-family: $secondary-font-family;
-    font-size: 80px;
-    color: $main-color;
-    line-height: 80px;
-    letter-spacing: 3px;
-    margin-bottom: 45px;
-  }
-
-  h3 {
-    font-family: $secondary-font-family;
-    font-size: 24px;
-    color: $main-color;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-  }
-
-  p {
-    font-size: 18px;
-    line-height: 22px;
-    color: $main-color;
-  }
 }
 
-.sletter__inner__right__form {
+.sletter-name__title {
+  margin-bottom: 45px;
+}
+
+.sletter-name__subtitle {
+  width: 100%;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.sletter-form {
   display: flex;
   justify-content: space-between;
-}
 
-.sletter__inner__right__buttons__input {
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 5px;
-  width: 365px;
-  padding: 5px 20px;
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    width: 365px;
+    padding: 5px 20px;
+  }
 
-  label {
+  &__label {
     font-size: 14px;
-    line-height: 19px;
+    line-height: 1.4;
     color: $main-color;
     opacity: 0.5;
     margin-bottom: 3px;
   }
+}
 
-  input {
-    font-size: 18px;
-    line-height: 25px;
-    color: $main-color;
-    border: none;
-    background-color: transparent;
+.sletter-form__input {
+  font-size: 18px;
+  line-height: 1.3;
+  color: $main-color;
+  border: none;
+  background-color: transparent;
+
+  &::placeholder {
+    color: $secondary-color;
+  }
+
+  &:focus {
+    outline: 1px solid transparent;
   }
 }
 
-.sletter__inner__right__buttons__input > input::placeholder {
-  color: $secondary-color;
-}
-
-.sletter__inner__right__buttons__input > input:focus {
-  outline: none;
-}
-
-.sletter__inner__right__buttons__sub {
+.button__sletter {
   display: flex;
   justify-content: center;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 700;
-  background-color: #ffb548;
-  padding: 18px;
-  width: 266px;
   margin: 0;
-  border: none;
-  border-radius: 4px;
-  color: black;
-  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 568px) {
+  .sletter {
+    height: auto;
+    background-image: url("./images/sletterMobile.png");
+    background-position: 0% 30%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: relative;
+    background-color: #0e0e0e;
+
+    &__gradient1 {
+      background: radial-gradient(
+        81.83% 50.42% at 48.17% 30%,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0) 77.58%,
+        #0e0e0e 99.74%
+      );
+    }
+
+    &__gradient2 {
+      background: radial-gradient(
+        25% 63.19% at 10% 50%,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0) 46.15%,
+        #0e0e0e 99.74%
+      );
+    }
+
+    &__inner {
+      display: block;
+    }
+  }
+
+  .sletter-left {
+    display: none;
+  }
+  .sletter-right {
+    width: 100%;
+    position: relative;
+  }
+
+  .section-name__sletter {
+    margin-bottom: 30px;
+    padding-left: 90px;
+  }
+
+  .sletter-name__title {
+    margin-bottom: 20px;
+    font-size: 33px;
+    width: 100%;
+  }
+
+  .sletter-name__subtitle {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .section-name__descr {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .sletter-form {
+    display: block;
+
+    &__buttons {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__label {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    &__input {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  .button__sletter {
+    width: 100%;
+    font-size: 12px;
+    padding: 12px;
+  }
 }

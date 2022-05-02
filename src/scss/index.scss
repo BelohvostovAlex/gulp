@@ -1,35 +1,75 @@
-@import './variables.scss';
-
+@import "./variables.scss";
 
 // global
 *,
 ::after,
 ::before {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
-    font-family: $main-font-family;
-    color: $main-color;
-    height: 100%;
-    position: relative;
+  font-family: $main-font-family;
+  color: $main-color;
+  height: 100%;
+  position: relative;
 }
 
 /* container */
 .container {
-    max-width: 1240px;
-    height: 100%;
-    padding: 0px 20px;
-    width: 100%;
-    margin: 0 auto;
+  max-width: 1240px;
+  height: 100%;
+  padding: 0px 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+//section title
+.section-name {
+  font-family: $secondary-font-family;
+  font-weight: 400;
+  color: $main-color;
+
+  &__title {
+    font-size: 80px;
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 1;
+    letter-spacing: 3px;
+  }
+
+  &__descr {
+    font-size: 18px;
+    line-height: 1.2;
+    font-family: $main-font-family;
+  }
+}
+
+//button
+.button {
+  font-family: $main-font-family;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+  background-color: #ffb548;
+  padding: 18px;
+  width: 266px;
+  border: none;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
 }

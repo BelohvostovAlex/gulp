@@ -7,7 +7,6 @@
   left: 0%;
   right: 0%;
   color: white;
-  width: 100%;
   z-index: 1000;
 
   hr {
@@ -22,77 +21,80 @@
   }
 }
 
-.footer__inner__menu {
+.footer-menu {
   display: flex;
-
-  &__items {
-    display: flex;
-  }
-
-  &__soc {
-    display: flex;
-  }
 }
 
-.footer__inner__menu__items li {
+.footer-navbar {
+  display: flex;
+}
+
+.footer-socbar {
+  display: flex;
+}
+
+.footer-navbar__item {
   margin-right: 40px;
 
   &:nth-child(5) {
     margin-right: 80px;
   }
+}
 
-  a {
-    transition: all linear 0.2s;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    color: $main-color;
+.footer-navbar__link {
+  transition: all linear 0.2s;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: $main-color;
 
-    &:hover {
-      color: #e93830;
-    }
+  &:hover {
+    color: #e93830;
   }
 }
 
-.footer__inner__menu__soc li {
+.footer-socbar__item {
   margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 
-  :last-child {
-    margin-right: 0px;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
-.footer__inner__logo {
-  img {
-    width: 90px;
-    height: 90px;
-  }
+.footer-logo__img {
+  width: 90px;
+  height: 90px;
 }
 
-.footer__bottom {
+.footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-  p {
-    font-size: 14px;
-    line-height: 19px;
+.footer-rights {
+  font-size: 14px;
+  line-height: 1.4;
+  color: $main-color;
+  opacity: 0.5;
+}
+
+.footer-info {
+  display: flex;
+
+  &__link {
     color: $main-color;
-    opacity: 0.5;
   }
 }
 
-.footer__bottom__info {
-  ul {
-    display: flex;
-  }
-}
-
-.footer__bottom__info ul li {
+.footer-info__item {
   margin-right: 20px;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 1.2;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 
@@ -127,6 +129,104 @@
   }
 }
 
-.footer__bottom__info ul li a {
-  color: $main-color;
+@media screen and (min-width: 320px) and (max-width: 568px) {
+  .footer {
+    position: static;
+    display: block;
+    background: #0e0e0e;
+
+    hr {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+    &__img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-socbar {
+    padding: 0px 10px;
+    justify-content: space-between;
+  }
+
+  .footer-navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-navbar__item {
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    &:nth-child(1) {
+      position: relative;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 4px;
+        height: 4px;
+        background-color: #e93830;
+        border-radius: 1px;
+        position: absolute;
+        top: -20%;
+        left: 50%;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-right: 0px;
+    }
+    &:nth-child(4) {
+      margin-bottom: 50px;
+    }
+    &:nth-child(5) {
+      margin-right: 0px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-rights {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+
+    &__item {
+      margin-bottom: 15px;
+      margin-right: 0px;
+    }
+  }
+
+  .footer-info__item:last-child {
+    margin-bottom: 0px;
+  }
 }
